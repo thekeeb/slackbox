@@ -21,15 +21,7 @@ const search = res => async query => {
     //     }
     //   ]
     // };
-    return res.send({
-      response_type: "in_channel",
-      attachments: [
-        {
-          text: messages,
-          image_url: 'https://media2.giphy.com/media/26grAryrmvBWvUZ5C/giphy.gif'
-        }
-      ]
-    })
+    return res.send(messages)
   } catch (e) {
     res.send(e.message)
   }
