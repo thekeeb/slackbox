@@ -8,6 +8,7 @@ const nowPlaying = res => async token => {
     });
     const parsed = JSON.parse(playing);
     return res.send({
+      response_type: "in_channel",
       attachments: [
         {
           fallback: `${parsed.item.name} by ${parsed.item.artists[0].name}`,
