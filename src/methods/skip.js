@@ -10,7 +10,7 @@ const skip = res => async token => {
       response_type: "in_channel",
       attachments: [
         {
-          text: 'Good shout DJ! Fuck this shit',
+          text: 'Good shout DJ! Fuck this shit!',
           image_url: 'http://now-here-this.timeout.com/wp-content/uploads/2014/09/DJ-Trick-The-Helicopter.gif'
         }
       ]

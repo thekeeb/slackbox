@@ -18,7 +18,15 @@ const searchTrack = res => async query => {
     }
     const foundTrack = await addTrack(track);
     const message = `Track added: *${track.name}* by *${track.artists[0].name}*`;
-    return res.send(message)
+    return res.send({
+      response_type: "in_channel",
+      attachments: [
+        {
+          text: message,
+          image_url: 'https://media0.giphy.com/media/l2JhvYhS9VPDREOIw/giphy.gif'
+        }
+      ]
+    })
   } catch (e) {
     res.send(e.message)
   }
