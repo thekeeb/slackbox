@@ -70,6 +70,7 @@ app.post('/store', (req, res) => {
     const { text } = req.body;
     if (text.trim().length === 0) {
       return res.send('Enter the name of a song and the name of the artist, separated by a "-"\nExample: Blue (Da Ba Dee) - Eiffel 65');
+      return res.publicReply('test');
     }
     if (text.indexOf('hackathon') === 0 || text.indexOf('HACKATHON') === 0) {
       const t = text.split('hackathon ')[1];
