@@ -7,6 +7,7 @@ const skip = res => async token => {
       url: 'https://api.spotify.com/v1/me/player/next'
     });
     return res.send({
+      response_type: "in_channel",
       attachments: [
         {
           text: 'Good Shout DJ',
