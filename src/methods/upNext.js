@@ -17,7 +17,14 @@ const upNext = res => async token => {
       const artists = val.track.artists.reduce((acc, val, ind) => `${acc}${ind !== 0 ? ',' : ''} ${val.name}`, '')
       return `${ind === 0 ? '*' : ''}${acc}${artists} - ${val.track.name}${ind === 0 ? '*' : ''}\n`;
     }, '');
-    return res.send(messages)
+    return res.send({
+      response_type: "in_channel",
+      attachments: [
+        {
+          text: messages,
+        }
+      ]
+    })
   } catch (e) {
     res.send(e.message)
   }
