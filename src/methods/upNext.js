@@ -22,6 +22,7 @@ const upNext = res => async token => {
       attachments: [
         {
           text: messages,
+          image_url: 'https://media3.giphy.com/media/PvKlwYTiKATRe/giphy.gif'
         }
       ]
     })
