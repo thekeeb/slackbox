@@ -90,11 +90,11 @@ app.post('/store', (req, res) => {
       return playlist(res);
     }
     if (text.indexOf('search') === 0) {
-      const query = `track:${text}`;
+      const query = text;
       console.log('query:', query);
       console.log('text', text);
       console.log('res:', res);
-      return search(res)(query);
+      return searchTrack(res)(query);
     }
     if(text.indexOf(' - ') === -1) {
       return search(res)(text);
