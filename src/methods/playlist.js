@@ -6,7 +6,7 @@ const playlist = res =>
       {
         fallback: `PLAYLIST`,
         title: `PLAYLIST`,
-        title_link: `https://open.spotify.com/user/paybase/playlist/${pl}`,
+        title_link: `https://open.spotify.com/user/thekeeb/playlist/${pl}`,
       }
     ]
   });
