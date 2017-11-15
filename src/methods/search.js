@@ -10,22 +10,23 @@ const search = res => async query => {
       console.log('artists:', `${acc}${artists} - ${val.name}\n`);
       return `${acc}${artists} - ${val.name}\n`;
     }, 'One of these? \n');
-    console.log('messages', messages);
-    // const payload = {
-    //   attachments: [
-    //     {
-    //       text: 'Choose a track',
-    //       callback_id: 'selectTrack',
-    //       actions: tracks.map(track => ({
-    //         name: 'select',
-    //         text: track.name,
-    //         value: track.id,
-    //         type: 'button',
-    //       }))
-    //     }
-    //   ]
-    // };
-    return res.send(messages)
+//     console.log('messages', messages);
+    const payload = {
+      attachments: [
+        {
+          text: 'Choose a track',
+          callback_id: 'selectTrack',
+          actions: tracks.map(track => ({
+            name: 'select',
+            text: track.name,
+            value: track.id,
+            type: 'button',
+          }))
+        }
+      ]
+    };
+    console.log('payload', payload);
+    return res.send(payload);
   } catch (e) {
     res.send(e.message)
   }
