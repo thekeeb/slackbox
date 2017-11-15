@@ -92,9 +92,9 @@ app.post('/store', (req, res) => {
     if (text.indexOf('search') === 0) {
       const query = text;
       console.log('query:', query);
-      console.log('text', text);
+      console.log('text:', text);
       console.log('res:', res);
-      return searchTrack(res)(query);
+      return search(res)(text);
     }
     if(text.indexOf(' - ') === -1) {
       return search(res)(text);
