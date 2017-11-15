@@ -1,8 +1,11 @@
 import spotifyApi from '../api/spotify';
 
+console.log('at least weve made it to the search.');
+
 const search = res => async query => {
   console.log('at least weve made it to the search.');
   try {
+    console.log('at least weve made it to the search.');
     const { body: { tracks: { items: tracks } } } = await spotifyApi.searchTracks(query, {limit: 10});
     const messages = tracks.reduce((acc, val, ind) => {
       const artists = val.artists.reduce((acc, val, ind) => `${acc}${ind !== 0 ? ',' : ''} ${val.name}`, '')
