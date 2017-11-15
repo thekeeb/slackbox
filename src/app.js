@@ -93,7 +93,7 @@ app.post('/store', (req, res) => {
       const query = text;
       console.log('query:', query);
       console.log('text:', text);
-      console.log('res:', res);
+//       console.log('res:', res);
       return search(res)(text);
     }
     if(text.indexOf(' - ') === -1) {
