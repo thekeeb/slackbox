@@ -89,6 +89,9 @@ app.post('/store', (req, res) => {
     if (text.indexOf('playlist') === 0) {
       return playlist(res);
     }
+    if (text.indexOf('search') === 0) {
+      return searchTrack(res);
+    }
     if(text.indexOf(' - ') === -1) {
       return search(res)(text);
     }
