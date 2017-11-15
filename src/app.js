@@ -91,7 +91,7 @@ app.post('/store', (req, res) => {
     }
     if (text.indexOf('search') === 0) {
       const query = `track:${text}`;
-      return searchTrack(res)(query);
+      return search(res)(query);
     }
     if(text.indexOf(' - ') === -1) {
       return search(res)(text);
